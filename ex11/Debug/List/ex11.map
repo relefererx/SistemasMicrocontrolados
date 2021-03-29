@@ -1,0 +1,105 @@
+###############################################################################
+#
+# IAR ELF Linker V9.10.1.308/W64 for ARM                  29/Mar/2021  17:33:07
+# Copyright 2007-2021 IAR Systems AB.
+#
+#    Output file  =
+#        D:\Faculdade\MICRO\EK-TM4C1294_SM_IAR8-main\EK-TM4C1294_SM_IAR8-main\Projects\lab4\ex11\Debug\Exe\ex11.out
+#    Map file     =
+#        D:\Faculdade\MICRO\EK-TM4C1294_SM_IAR8-main\EK-TM4C1294_SM_IAR8-main\Projects\lab4\ex11\Debug\List\ex11.map
+#    Command line =
+#        -f
+#        D:\Faculdade\MICRO\EK-TM4C1294_SM_IAR8-main\EK-TM4C1294_SM_IAR8-main\Projects\lab4\ex11\Debug\Exe\ex11.out.rsp
+#        (D:\Faculdade\MICRO\EK-TM4C1294_SM_IAR8-main\EK-TM4C1294_SM_IAR8-main\Projects\lab4\ex11\Debug\Obj\asm.o
+#        --no_out_extension -o
+#        D:\Faculdade\MICRO\EK-TM4C1294_SM_IAR8-main\EK-TM4C1294_SM_IAR8-main\Projects\lab4\ex11\Debug\Exe\ex11.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map
+#        D:\Faculdade\MICRO\EK-TM4C1294_SM_IAR8-main\EK-TM4C1294_SM_IAR8-main\Projects\lab4\ex11\Debug\List\ex11.map
+#        --config "D:\Program Files\IAR Systems\Embedded Workbench
+#        9.0\arm\CONFIG\generic_cortex.icf" --semihosting --no_library_search
+#        --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x7'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block PROC_STACK with size = 0, alignment = 8 { };
+define block HEAP with size = 2K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'ffff] {
+          rw, block CSTACK, block PROC_STACK, block HEAP };
+
+No sections matched the following patterns:
+
+  rw  in "P2"
+
+
+  Section   Kind         Address   Size  Object
+  -------   ----         -------   ----  ------
+"A0":                              0x40
+  .intvec   ro code          0x0   0x40  asm.o [1]
+                          - 0x40   0x40
+
+"P1":                              0x3e
+  .text     ro code         0x40   0x3c  asm.o [1]
+  .text     ro code         0x7c    0x2  asm.o [1]
+                          - 0x7e   0x3e
+
+"P2":                             0x400
+  CSTACK             0x2000'0000  0x400  <Block>
+    CSTACK  uninit   0x2000'0000  0x400  <Block tail>
+                   - 0x2000'0400  0x400
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+         0x7e     0x7'ffff  0x7'ff82
+  0x2000'0400  0x2000'ffff    0xfc00
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module          ro code  rw data
+    ------          -------  -------
+command line/config:
+    --------------------------------
+    Total:
+
+D:\Faculdade\MICRO\EK-TM4C1294_SM_IAR8-main\EK-TM4C1294_SM_IAR8-main\Projects\lab4\ex11\Debug\Obj: [1]
+    asm.o               126
+    --------------------------------
+    Total:              126
+
+    Linker created             1'024
+------------------------------------
+    Grand Total:        126    1'024
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                    Address  Size  Type      Object
+-----                    -------  ----  ----      ------
+CSTACK$$Base         0x2000'0000         --   Gb  - Linker created -
+CSTACK$$Limit        0x2000'0400         --   Gb  - Linker created -
+__iar_program_start         0x41        Code  Gb  asm.o [1]
+__vector_table               0x0        Data  Gb  asm.o [1]
+
+
+[1] = D:\Faculdade\MICRO\EK-TM4C1294_SM_IAR8-main\EK-TM4C1294_SM_IAR8-main\Projects\lab4\ex11\Debug\Obj
+
+    126 bytes of readonly  code memory
+  1'024 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
